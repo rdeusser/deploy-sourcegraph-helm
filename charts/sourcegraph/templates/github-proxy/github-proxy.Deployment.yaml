@@ -1,3 +1,4 @@
+{{- if .Values.githubProxy.enabled -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -90,3 +91,4 @@ spec:
       {{- if .Values.githubProxy.extraVolumes }}
       {{- toYaml .Values.githubProxy.extraVolumes | nindent 6 }}
       {{- end }}
+{{- end }}
